@@ -1,0 +1,15 @@
+{
+  "62": "Swamp",
+  "40": "Persistent Petitioners",
+  "42": "Forest",
+  "61": "Island",
+  "1": "Impulsive Pilferer",
+  "5": "Mire's Grasp",
+  "3": "Audacious Thief",
+  "4": "Wooded Ridgeline",
+  "2": "Poppet Stitcher",
+  "12": "New Perspectives",
+  "8": "Experimental Synthesizer",
+  "37": "Snow-Covered Forest",
+  "20": "Shadow of the Grave"
+}
