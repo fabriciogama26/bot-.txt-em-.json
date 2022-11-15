@@ -1,39 +1,43 @@
 import pyautogui
 import webbrowser as wb
 from time import sleep
+from add import price, card
 
-wb.open("https://www.goatbots.com/download-prices")
+def __init__():
 
-sleep(3)
+    wb.open("https://www.goatbots.com/download-prices")
 
-pyautogui.click(x=239, y=509)
+    sleep(3)
 
-sleep(3)
+    pyautogui.click(x=239, y=509)
 
-pyautogui.click(x=339, y=39)
+    sleep(3)
 
-sleep(3)
+    pyautogui.click(x=339, y=39)
 
-caminho = "C:\\Users\\Alpha\\Desktop\\PCMSO\\Cards_Price\\price-history"
+    sleep(3)
 
-pyautogui.write(caminho)
+    # caminho = "C:\\Users\\Alpha\\Desktop\\Cards_Price\\price-history"
 
-pyautogui.press("ENTER")
+    pyautogui.write(price)
 
-pyautogui.click(x=525, y=439)
+    pyautogui.press("ENTER")
 
-sleep(3)
+    pyautogui.click(x=525, y=439)
 
-pyautogui.click(x=189, y=486)
+    sleep(3)
 
-sleep(3)
+    pyautogui.click(x=189, y=486)
 
-pyautogui.click(x=339, y=39)
+    sleep(3)
 
-sleep(3)
+    pyautogui.click(x=339, y=39)
 
-pyautogui.write(caminho)
+    sleep(3)
 
-pyautogui.press("ENTER")
+    pyautogui.write(card)
 
-pyautogui.click(x=525, y=439)
+    pyautogui.press("ENTER")
+
+    pyautogui.click(x=525, y=439)
+
