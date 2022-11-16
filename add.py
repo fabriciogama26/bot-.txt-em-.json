@@ -12,7 +12,7 @@ card = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\Cards\\")
 
 trade = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\")
 
-ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price.xls")
+ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price.json")
 
 def __init__():
 
@@ -24,6 +24,8 @@ def __init__():
         for arq in os.listdir(price):
             pricecard = open(os.path.join(price, arq),"r")
             prices = json.load(pricecard)
+            pricecard.close()
+            os. remove(price + arq) 
 
     for arquivos2 in os.listdir(card):
         zipfullcard = zipfile.ZipFile(card + arquivos2)
@@ -33,6 +35,8 @@ def __init__():
         for arq2 in os.listdir(card):
             cards = open(os.path.join(card, arq2),"r")
             listcards = json.load(cards)
+            cards.close()
+            os. remove(card + arq2) 
 
     for arquivos3 in os.listdir(trade):
         tradecards = open(os.path.join(trade, arquivos3),"r")
@@ -51,6 +55,3 @@ def __init__():
         new = json.dump(dictcardprice, nlc, indent=2)              
         nlc.write(str(new))
         nlc.close()
-
-    os. remove(price + arq) 
-    os. remove(card + arq2) 

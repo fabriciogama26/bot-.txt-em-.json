@@ -1,6 +1,7 @@
 import pyautogui
 import webbrowser as wb
 from time import sleep
+import add
 from add import price, card
 
 def __init__():
@@ -40,4 +41,10 @@ def __init__():
     pyautogui.press("ENTER")
 
     pyautogui.click(x=525, y=439)
+
+    sleep(3)
+
+if __name__=="__main__":
+    __init__()
+    add.__init__()
 
