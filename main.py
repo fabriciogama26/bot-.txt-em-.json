@@ -3,48 +3,53 @@ import webbrowser as wb
 from time import sleep
 import add
 from add import price, card
+import conexao
 
 def __init__():
 
-    wb.open("https://www.goatbots.com/download-prices")
+    try:
 
-    sleep(3)
+        wb.open("https://www.goatbots.com/download-prices")
 
-    pyautogui.click(x=239, y=509)
+        sleep(3)
 
-    sleep(3)
+        pyautogui.click(x=239, y=509)
 
-    pyautogui.click(x=339, y=39)
+        sleep(3)
 
-    sleep(3)
+        pyautogui.click(x=400, y=39)
 
-    # caminho = "C:\\Users\\Alpha\\Desktop\\Cards_Price\\price-history"
+        sleep(2)
 
-    pyautogui.write(price)
+        pyautogui.write(price)
 
-    pyautogui.press("ENTER")
+        pyautogui.press("ENTER")
 
-    pyautogui.click(x=525, y=439)
+        pyautogui.click(x=525, y=439)
 
-    sleep(3)
+        sleep(3)
 
-    pyautogui.click(x=189, y=486)
+        pyautogui.click(x=189, y=486)
 
-    sleep(3)
+        sleep(3)
 
-    pyautogui.click(x=339, y=39)
+        pyautogui.click(x=400, y=39)
 
-    sleep(3)
+        sleep(2)
 
-    pyautogui.write(card)
+        pyautogui.write(card)
 
-    pyautogui.press("ENTER")
+        pyautogui.press("ENTER")
 
-    pyautogui.click(x=525, y=439)
+        pyautogui.click(x=525, y=439)
 
-    sleep(3)
+        sleep(3)
+
+    except:
+
+        KeyError
 
 if __name__=="__main__":
-    __init__()
+    conexao.__init__()
     add.__init__()
 

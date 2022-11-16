@@ -2,6 +2,9 @@ import json
 import os
 import zipfile
 from os import path
+import datetime
+
+data = datetime.datetime.today()
 
 dictcolecao = {}
 dictcardprice = {}
@@ -12,7 +15,7 @@ card = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\Cards\\")
 
 trade = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\")
 
-ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price.json")
+ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price" + "-" + f"{data.day}" + "-" + f"{data.month}"+ "-" + f"{data.year}"".txt")
 
 def __init__():
 
