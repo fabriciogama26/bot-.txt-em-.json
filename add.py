@@ -21,7 +21,7 @@ price = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\Price\\")
 
 card = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\Cards\\")
 
-collection = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\")
+collection = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\Full Trade List.csv")
 
 dictcollection = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\Full_Trade_List.txt")
 
@@ -49,20 +49,25 @@ def __init__():
             cards = open(os.path.join(card, arq2),"r")
             listcards = json.load(cards)
             cards.close()
-            os.remove(card + arq2) 
+            os.remove(card + arq2)
 
-    for arquivos3 in os.listdir(collection):
-        tradecards = open(os.path.join(collection, arquivos3),"r")
-        for i in tradecards:
-            key, desc = i.lstrip().split(None,1)
-            dictcolecao[f"{desc.strip()}"] = dict(Number=key.strip())
+    if os.path.isfile(collection):
 
-    with open(collectionpricearquive) as csvFile:
+        with open(collection) as csvFile:
 
-        csvReader = csv.DictReader(csvFile)
-        for rows in csvReader:
-            id = rows['itemID']
-            dictcolecaoprice[id] = rows         
+            csvReader = csv.DictReader(csvFile)
+
+            for i in csvReader:
+                id = i['ID #']
+                dictcolecao[id] = i
+
+    with open(collectionpricearquive) as csvFile2:
+
+        csvReader = csv.DictReader(csvFile2)
+
+        for ii in csvReader:
+            id2 = ii['itemID']
+            dictcolecaoprice[id2] = ii     
 
     for full, pricefull  in zip(listcards, prices.items()):
 
@@ -70,11 +75,14 @@ def __init__():
         
         dictcardprice[full] = dict(listcards[f'{full}'], price=pricecard)
 
-    with open(dictcollection, 'w') as ftl:
-                    
-        ftl.write(str(json.dump(dictcolecao, ftl, indent=2)))
-        ftl.close()
+    if os.path.isfile(collection):
 
+        with open(dictcollection, 'w') as ftl:
+                        
+            ftl.write(str(json.dump(dictcolecao, ftl, indent=4)))
+            ftl.close()
+            os.remove(collection)
+ 
     with open(collectionpricearquivenew, 'w') as cpn:
 
         cpn.write(json.dumps(dictcolecaoprice, indent=4))
