@@ -6,7 +6,7 @@ def __init__():
 
     try:
 
-        schedule.every().day.at("09:28").do(conexao.__init__())
+        schedule.every().day.at("09:40").do(conexao.__init__())
         schedule.run_pending() 
         sleep(90)      
 
