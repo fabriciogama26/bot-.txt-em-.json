@@ -1,73 +1,20 @@
-import pyautogui
-import webbrowser as wb
+import schedule
 from time import sleep
-import add
-from add import price, card, collectionprice
 import conexao
 
 def __init__():
 
     try:
 
-        wb.open("https://www.goatbots.com/download-prices")
-
-        sleep(2)
-
-        pyautogui.click(x=239, y=509)
-
-        sleep(2)
-
-        pyautogui.click(x=400, y=39)
-
-        sleep(2)
-
-        pyautogui.write(price)
-
-        pyautogui.press("ENTER")
-
-        pyautogui.click(x=525, y=439)
-
-        sleep(2)
-
-        pyautogui.click(x=189, y=486)
-
-        sleep(2)
-
-        pyautogui.click(x=400, y=39)
-
-        sleep(2)
-
-        pyautogui.write(card)
-
-        pyautogui.press("ENTER")
-
-        pyautogui.click(x=525, y=439)
-
-        sleep(1)
-
-        wb.open("https://www.goatbots.com/trade-history")
-
-        sleep(2)
-
-        pyautogui.click(x=742, y=305)
-
-        sleep(2)
-
-        pyautogui.click(x=400, y=39)
-
-        sleep(2)
-
-        pyautogui.write(collectionprice)
-
-        pyautogui.press("ENTER")
-
-        pyautogui.click(x=525, y=439)
+        schedule.every().day.at("09:28").do(conexao.__init__())
+        schedule.run_pending() 
+        sleep(90)      
 
     except:
-
-        KeyError
+        sleep(1)
+        print("erro hora")
+        return __init__()
 
 if __name__=="__main__":
-    conexao.__init__()
-    add.__init__()
+    __init__()
 

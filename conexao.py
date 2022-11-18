@@ -1,7 +1,6 @@
 import requests
 from time import sleep
-import main
-
+import bot, add
 
 def __init__():
                   
@@ -10,8 +9,15 @@ def __init__():
     timeout = 5
     try:
         requests.get(url, timeout=timeout)
-        main.__init__()
-        
+        bot.__init__()
+        add.__init__()  
+
     except:
         sleep(60)
-        return __init__()
+        return __init__() 
+
+    
+
+
+    
+    
