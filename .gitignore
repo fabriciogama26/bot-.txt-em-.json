@@ -154,3 +154,6 @@ cython_debug/
 
 # VS code
 .vscode/
+
+#price_history
+price-history/

@@ -9,57 +9,72 @@ def __init__():
 
         wb.open("https://www.goatbots.com/download-prices")
 
-        sleep(2)
+        sleep(3)
 
+        #dowload
         pyautogui.click(x=239, y=509)
 
-        sleep(2)
+        sleep(3)
 
-        pyautogui.click(x=400, y=39)
+        #local
+        pyautogui.click(x=398, y=156)
 
-        sleep(2)
+        sleep(3)
 
         pyautogui.write(price)
 
+        sleep(1)
+
         pyautogui.press("ENTER")
 
-        pyautogui.click(x=525, y=439)
+        #salvar
+        pyautogui.click(x=537, y=554)
 
-        sleep(2)
+        sleep(3)
 
+        #dowload
         pyautogui.click(x=189, y=486)
 
-        sleep(2)
+        sleep(3)
 
-        pyautogui.click(x=400, y=39)
+        #local
+        pyautogui.click(x=398, y=156)
 
-        sleep(2)
+        sleep(3)
 
         pyautogui.write(card)
 
+        sleep(1)
+
         pyautogui.press("ENTER")
 
-        pyautogui.click(x=525, y=439)
+        #salvar
+        pyautogui.click(x=537, y=554)
 
         sleep(1)
 
         wb.open("https://www.goatbots.com/trade-history")
 
-        sleep(2)
+        sleep(3)
 
+        #dowload
         pyautogui.click(x=742, y=305)
 
-        sleep(2)
+        sleep(3)
 
-        pyautogui.click(x=400, y=39)
+        #local
+        pyautogui.click(x=398, y=156)
 
-        sleep(2)
+        sleep(3)
 
         pyautogui.write(collectionprice)
 
+        sleep(1)
+
         pyautogui.press("ENTER")
 
-        pyautogui.click(x=525, y=439)
+        #salvar
+        pyautogui.click(x=537, y=554)
 
     except:
 
