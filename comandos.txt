@@ -1,0 +1,8 @@
+    # options = webdriver.ChromeOptions()
+
+    # options.add_argument('proxy-server=106.122.8.54:3128')
+    # ou usar
+    # options.add_argument('--user-data-dir=C:\Users\suppo\AppOata\Local\Google\Chrome\User Data\Default')
+
+    # browser = uc.Chrome(
+    # options=options)

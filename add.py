@@ -25,7 +25,7 @@ collection = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\
 
 dictcollection = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\collection\\Full_Trade_List.txt")
 
-ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price" + "-" + f"{data.day}" + "-" + f"{data.month}"+ "-" + f"{data.year}"".txt")
+ListPriceCards = path.join(path.expanduser("~"), "Desktop\\Cards_Price\\price-history\\cards-price" + "-" + f"{data.day}" + "-" + f"{data.month}"+ "-" + f"{data.year}"".json")
 
 def __init__():
 
@@ -61,13 +61,15 @@ def __init__():
                 id = i['ID #']
                 dictcolecao[id] = i
 
-    with open(collectionpricearquive) as csvFile2:
+    if os.path.isfile(collectionpricearquive):    
 
-        csvReader = csv.DictReader(csvFile2)
+        with open(collectionpricearquive) as csvFile2:
 
-        for ii in csvReader:
-            id2 = ii['itemID']
-            dictcolecaoprice[id2] = ii     
+            csvReader = csv.DictReader(csvFile2)
+
+            for ii in csvReader:
+                id2 = ii['itemID']
+                dictcolecaoprice[id2] = ii     
 
     for full, pricefull  in zip(listcards, prices.items()):
 
@@ -82,12 +84,14 @@ def __init__():
             ftl.write(str(json.dump(dictcolecao, ftl, indent=4)))
             ftl.close()
             os.remove(collection)
- 
-    with open(collectionpricearquivenew, 'w') as cpn:
 
-        cpn.write(json.dumps(dictcolecaoprice, indent=4))
-        cpn.close()
-        os.remove(collectionpricearquive) 
+    if os.path.isfile(collectionpricearquive):
+ 
+        with open(collectionpricearquivenew, 'w') as cpn:
+
+            cpn.write(json.dumps(dictcolecaoprice, indent=4))
+            cpn.close()
+            os.remove(collectionpricearquive) 
 
     with open(ListPriceCards, 'w') as nlc:
               
